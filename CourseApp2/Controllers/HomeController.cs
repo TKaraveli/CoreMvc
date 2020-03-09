@@ -43,5 +43,10 @@ namespace CourseApp2.Controllers
             return View("Thanks",model);
         }
 
+        public IActionResult List()
+        {
+            return View(context.Requests);
+        }
+
     }
 }

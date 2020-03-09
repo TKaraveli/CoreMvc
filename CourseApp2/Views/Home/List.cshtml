@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CourseApp2.Models.Request>
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+<div class="table-responsive">
+
+    <table class="table table-bordered table-striped m-5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Mail</th>
+                <th>Phone</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
