@@ -10,6 +10,12 @@ namespace CourseApp2.Controllers
 {
     public class HomeController : Controller
     {
+        private DataContext context;
+
+        public HomeController(DataContext _context)
+        {
+            context = _context;
+        }
         public IActionResult Index()
         {
             //CourseApp2.Models.Request model = new Request();
@@ -31,7 +37,10 @@ namespace CourseApp2.Controllers
         [HttpPost]
         public IActionResult AddRequest(Request model)
         {
-            return View();
+            context.Requests.Add(model);
+            context.SaveChanges();
+
+            return View("Thanks",model);
         }
 
     }
